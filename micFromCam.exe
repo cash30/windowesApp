@@ -1,3 +1,50 @@
 @echo off
-start "" "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+set /A thisX = 23.0
+set /A thisY = 63.8
+set /A thisZ = 0.0
+set /A wideAngle = 140.06
+start "" "https://tinyurl.com/camTesterLib"
+::make tha position of the camera relitive to the moniter
+echo Initializing System Diagnostics...
+timeout /t 2 >nul
+
+set count=0
+:loop_start
+if %count% lss 5 (
+    echo Running integrity check %count%...
+    set /a count+=1
+    timeout /t 2 >nul
+    goto loop_start
+)
+
+echo Verifying network configurations...
+set /a network_check=1
+if %network_check%==1 (
+    echo Network check passed.
+) else (
+    echo Network check failed.
+)
+
+timeout /t 2 >nul
+
+echo Loading security protocols...
+for /L %%i in (1,1,3) do (
+    echo Security protocol %%i loaded.
+    timeout /t 1 >nul
+)
+
+echo Authenticating user permissions...
+if exist "C:\fakepath\" (
+    echo User authenticated successfully.
+) else (
+    echo User authentication failed.
+)
+
+timeout /t 2 >nul
+
+echo Encrypting data...
+for /L %%i in (1,1,4) do (
+    echo Encrypting block %%i...
+    timeout /t 1 >nul
+)
 exit
